@@ -290,7 +290,7 @@
 }
 
 @supports ((-webkit-text-stroke: 1px var(--page-background-color, #ffffff)) or 
-(-webkit-text-stroke: 1px var(--page-background-color, #ffffff))){
+  (-webkit-text-stroke: 1px var(--page-background-color, #ffffff))){
   .card__image-label {
     -webkit-text-stroke: 1px var(--page-background-color, #ffffff);
     text-shadow: none;
