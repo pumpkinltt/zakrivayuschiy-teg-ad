@@ -11,7 +11,7 @@
 */
 
 .page {
-  min-inline-size: 320px;
+  min-inline-size: 320px; /*тк это минимальный размер мобильного окна просмотра*/
   min-block-size: 100dvb;
   padding-block-start: 100px;
   color: var(--text-color, #000000);
@@ -20,10 +20,9 @@
   font-family: var(--page-main-font-family, "Inter", sans-serif);
   background-attachment: fixed;
   background-size: cover;
-  /* font-variation-settings: "wght" var(--page-main-font-weight, 400); */
 }
 
-/* ФИЛЬТРЫ КАРТИНОК */
+/* фильтры картинок */
 .filter-grayscale {
   filter: grayscale(70%);
 }
@@ -115,6 +114,7 @@
 
 .header__subtitle {
   font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+  margin-bottom: 65px;
 }
 
 .main {
@@ -211,12 +211,34 @@
   border-color: var(--text-color, #000000);
 }
 
+/* анимации кнопок */
+.button {
+  cursor: pointer;
+  position: relative;
+  appearance: none;
+  z-index: 1;
+  text-transform: inherit;
+  font-family: var(--page-font-family, "PressStart2P", fantasy);
+  padding: 10px 36px;
+  border: 2px solid var(--text-color, #000000);
+  background: var(--page-background-color, #ffffff);
+  transition: box-shadow 0.3s ease;
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button:focus-visible {
+  box-shadow: 2px 2px 0px 0px var(--text-color, #000000);
+}
+
 .button::before {
   content: "";
-  inline-size: 100%;
-  block-size: 100%;
   position: absolute;
   inset: 0;
+  inline-size: 100%;
+  block-size: 100%;
   z-index: -1;
   background: var(--text-color, #000000);
   transform: scaleX(0);
@@ -251,4 +273,26 @@
 .like-icon {
   block-size: 36px;
   inline-size: 39px;
+}
+
+@media (width < 376px) {
+  .button--save {
+    flex-direction: column;
+  }
+  .button__icon {
+    block-size: 28px;
+    inline-size: 28px;
+  }
+  .modal {
+    max-inline-size: 340px;
+    padding: 28px 34px 28px 40px;
+  }
+}
+
+@supports ((-webkit-text-stroke: 1px var(--page-background-color, #ffffff)) or 
+(-webkit-text-stroke: 1px var(--page-background-color, #ffffff))){
+  .card__image-label {
+    -webkit-text-stroke: 1px var(--page-background-color, #ffffff);
+    text-shadow: none;
+  }
 }
