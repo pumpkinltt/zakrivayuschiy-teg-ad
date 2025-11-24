@@ -1,1 +1,1 @@
-https://github.com/pumpkinltt/zakrivayuschiy-teg-ad
+https://pumpkinltt.github.io/zakrivayuschiy-teg-ad
